@@ -1,0 +1,10 @@
+framework module Groot {
+  umbrella header "Groot.h"
+
+  export *
+  module * { export * }
+}
+
+module Groot.Swift {
+    header "Groot-Swift.h"
+}
