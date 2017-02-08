@@ -23,7 +23,7 @@ class TweetsViewController: UITableViewController {
     
     func configureCells() {
         self.showAvatars = UserDefaults.standard.bool(forKey: SettingsViewController.showAvatarsKey)
-        self.controller?.configureCell = { (cell: UITableViewCell, object: NSManagedObject, indexPath: IndexPath) in
+        self.controller?.configureCell = { [unowned self] (cell: UITableViewCell, object: NSManagedObject, indexPath: IndexPath) in
             if let tweetCell = cell as? TweetTableViewCell, let tweet = object as? Tweet {
                 tweetCell.showAvatar = self.showAvatars || indexPath.row == 0
                 tweetCell.tweet = tweet
